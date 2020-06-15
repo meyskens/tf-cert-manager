@@ -8,5 +8,5 @@ variable "contact_email" {
 
 variable "is_cluster_up" {
   description = "Is the cluster up?"
-  default = false
+  default     = false
 }

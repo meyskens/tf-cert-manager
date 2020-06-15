@@ -1,3 +1,3 @@
 resource "kind" "cluster" {
-    name = "kind-${var.cluster_name}"
+  name = "kind-${var.cluster_name}"
 }
