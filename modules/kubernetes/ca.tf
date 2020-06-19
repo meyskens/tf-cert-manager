@@ -1,5 +1,5 @@
 resource "tls_private_key" "ca" {
-  algorithm   = "RSA"
+  algorithm = "RSA"
   rsa_bits  = 2048
 }
 
@@ -25,7 +25,7 @@ resource "tls_self_signed_cert" "ca" {
 
 resource "kubernetes_secret" "ca" {
   metadata {
-    name = "ca"
+    name      = "ca"
     namespace = "default"
   }
 
@@ -50,7 +50,7 @@ resource "kubernetes_manifest" "ca_issuer" {
     }
     "spec" = {
       "ca" = {
-        "secretName"  = kubernetes_secret.ca.metadata[0].name
+        "secretName" = kubernetes_secret.ca.metadata[0].name
       }
     }
   }
